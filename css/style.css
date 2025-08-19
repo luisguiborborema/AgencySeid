@@ -4,7 +4,7 @@
 /* 1. Variáveis Globais (Paleta de Cores e Fontes) */
 :root {
     /* Cores de Fundo */
-    --cor-fundo-principal: #1C2B33;  /* Azul petróleo escuro, o fundo principal do site */
+    --cor-fundo-principal: #173545;  /* Azul petróleo escuro, o fundo principal do site */
     --cor-fundo-claro: #FFFFFF;     /* Branco puro para seções ou cards com fundo claro */
     --cor-destaque-fundo: #F3E9DC;  /* Champagne Claro */
 
@@ -44,11 +44,6 @@ header {
     width: 100%;     /* Faz ocupar a largura toda */
     z-index: 1000;   /* Garante que fique sobre outros elementos */
 }
-/* NOVA REGRA PARA CENTRALIZAR O BOTÃO */
-.button-wrapper {
-    text-align: center;
-}
-
 main {
     padding-top: 60px; /* Empurra todo o conteúdo principal para baixo */
 }
@@ -89,7 +84,7 @@ main {
 }
 
 /* 4. Botões e Links */
-.cta-button, .cta-button-nav, .cta-button-secondary{
+.cta-button, .cta-button-nav, .cta-button-secondary {
     padding: 12px 28px;
     text-decoration: none;
     font-weight: 600;
@@ -99,11 +94,7 @@ main {
     border: 2px solid transparent; /* Base para transição suave */
     cursor: pointer;
 }
-/* --- CTA Botão --- */
-.contact-form-section form .cta-button {
-    width: 100%;
-    margin-top: 10px;
-}
+
 .cta-button { /* Botão principal (preenchido) */
     background-color: var(--cor-cta);
     color: var(--cor-fundo-principal);
@@ -132,6 +123,12 @@ main {
 
 /* REGRA DO HOVER ALTERADA */
 .cta-button-secondary:hover {
+    background-color: var(--cor-cta);
+    border-color: var(--cor-cta);
+    color: var(--cor-fundo-principal);
+}
+
+.cta-button:hover{
     background-color: var(--cor-cta);
     border-color: var(--cor-cta);
     color: var(--cor-fundo-principal);
@@ -317,6 +314,12 @@ section h2 {
     display: none; /* Escondemos o link antigo, pois adicionamos um botão CTA no HTML */
 }
 /* Valores (Sobre Nós) */
+.value-item {
+    background-color: transparent;
+    border: 1px solid rgba(184, 156, 116, 0.3);
+    padding: 2rem;
+    text-align: center;
+}
 .value-item h3 {
     color: var(--cor-cta);
 }
@@ -471,7 +474,7 @@ section h2 {
 /* 7. Footer */
 /* Rodapé */
 .main-footer {
-    background-color: #1C2B33;
+    background-color: #173545;
     color: #000000;
     padding: 60px 20px 30px;
     text-align: center;
@@ -522,6 +525,11 @@ section h2 {
 .footer-phone a:hover {
     color: #25d366;
 }
+.footer-email {
+    font-size: 0.95rem;
+    color: #B89C74;
+    margin-top: 10px;
+}
 
 .footer-email a {
     color: #F3E9DC;
@@ -530,7 +538,7 @@ section h2 {
 }
 
 .footer-email a:hover {
-    color: var(--cor-cta);
+    color: #f9f9f9;
 }
 
 .footer-logo-img {
@@ -643,8 +651,10 @@ section h2 {
     font-size: 0.85rem;
     color: #000000;
     margin-top: 5px;
-    margin-top: 5px;
     max-width: none;
+}
+.footer-bottom p{
+    color: #000000;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -884,7 +894,7 @@ section h2 {
 .contact-form-section .form-container {
     max-width: 900px;
     margin: 0 auto;
-    background-color: #1C2B33; /* Fundo Azul*/
+    background-color: #173545; /* Fundo Azul*/
     padding: 40px;
     border-radius: 10px;
     text-align: left;
@@ -920,11 +930,23 @@ section h2 {
     font-family: 'Poppins', sans-serif;
     background-color: #F3E9DC;
 }
-.form-container .cta-button {
-    font-size: 1.2rem; /* 1rem = 16px */
-    font-weight: 700;  /* Opcional: deixa o texto um pouco mais grosso */
-}
 
+/* --- CTA Botão --- */
+.cta-button {
+    display: inline-block;
+    background-color: #173545;
+    color: #B89C74; /* Cor do texto do botão */
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border-color: var(--cor-cta);
+    cursor: pointer;
+}
+.contact-form-section form .cta-button {
+    width: 100%;
+    margin-top: 10px;
+}
 
 /* FAQ */
 .faq {
@@ -1033,4 +1055,9 @@ section h2 {
     .contact-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* NOVA REGRA PARA CENTRALIZAR O BOTÃO */
+.button-wrapper {
+    text-align: center;
 }
