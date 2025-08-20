@@ -767,8 +767,16 @@ section h2 {
     text-align: left;
 }
 /* 2. Estilização dos cards da equipe para um visual mais refinado */
+.team.secao-clara{
+    background-color: var(--cor-destaque-fundo);
+}
+.team.secao-clara{
+    color: var(--cor-texto-escuro);
+}
+
 .team-member {
-    border: 1px solid #EAEAEA;                  /* Adiciona uma borda muito sutil */
+    background-color: var(--cor-fundo-claro);
+    border: 1px solid var(--cor-cta);                  /* Adiciona uma borda muito sutil */
     border-radius: 8px;                         /* Arredonda as bordas do card */
     padding: 2rem;
     text-align: center;
@@ -783,6 +791,9 @@ section h2 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem; /* Define o espaçamento entre os cards */
 }
+.team-grid + h2{
+    margin-top: 2.5rem;
+}
 
 
 .team-member:hover {
@@ -790,28 +801,26 @@ section h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Aumenta a sombra no hover */
 }
 
-
 .team-member img {
     width: 120px;                               /* Define um tamanho para a imagem */
     height: 120px;
     border-radius: 50%;                         /* Deixa a imagem redonda */
     object-fit: cover;                          /* Garante que a foto não fique distorcida */
     margin: 0 auto 1.5rem auto;                 /* Centraliza e adiciona margem inferior */
-    border: 4px solid var(--cor-destaque-fundo); /* Adiciona uma borda com a cor de destaque (bege) */
+    border: 4px solid var(--cor-cta);           /* Adiciona uma borda com a cor de destaque (dourado) */
 }
-
-
 .team-member h3 {
     font-family: var(--fonte-secundaria);
     font-size: 1.5rem;
     color: var(--cor-texto-escuro);
     margin-bottom: 0.5rem;
 }
-
-
 .team-member p {
     color: var(--cor-texto-escuro-sec);
     font-size: 0.95rem;
+}
+.team-member.author-title{
+    color: var(--cor-texto-escuro);
 }
 /* 3. Melhorias visuais na seção de Pilares */
 .values-grid {
@@ -819,7 +828,6 @@ section h2 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo */
     gap: 1.5rem;
 }
-
 .value-item {
     /* O estilo original já tem uma base ótima, vamos refinar */
     background-color: rgba(255, 255, 255, 0.02); /* Fundo transparente quase imperceptível */
@@ -829,23 +837,17 @@ section h2 {
     border-radius: 8px;                          /* Arredonda as bordas */
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;/* Animação suave */
 }
-
-
 .value-item:hover {
     background-color: var(--cor-fundo-principal); /* Mantém o fundo escuro no hover */
     border-color: var(--cor-cta);                 /* Destaca a borda com a cor dourada */
     transform: translateY(-5px);                  /* Leve elevação no hover */
 }
-
-
 .value-item h3 {
     font-family: var(--fonte-secundaria);
     color: var(--cor-cta);
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
-
-
 .value-item p {
     color: var(--cor-texto-claro);
     opacity: 0.8; /* Suaviza o texto do parágrafo */
@@ -855,8 +857,6 @@ section h2 {
     padding: 4rem 5%;
     text-align: left !important;
 }
-
-
 .mission h1 {
     font-family: var(--fonte-secundaria); /* Usa a fonte de destaque para o título */
     font-size: 2.8rem;                    /* Aumenta o impacto do título */
@@ -902,7 +902,7 @@ section h2 {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #EAEAEA;
+    border: 1px solid var(--cor-cta);
 }
 .method-step:hover {
     transform: translateY(-8px);
