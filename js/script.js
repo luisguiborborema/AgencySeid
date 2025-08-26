@@ -3,17 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Site da SEID carregado com sucesso.");
 
-    // Futuramente, você pode adicionar aqui:
-    // 1. Lógica para o menu mobile (hambúrguer).
-    // 2. Animações de scroll para revelar elementos.
-    // 3. Validação avançada do formulário de contato.
-    // 4. Um carrossel para os depoimentos ou portfólio.
-
-    
-    // Seleciona todos os inputs com a classe 'phone-mask'
+    // --- Funcionalidade da Máscara de Telefone ---
     const phoneInputs = document.querySelectorAll('.phone-mask');
-
-    // Função que aplica a máscara
     const handlePhoneInput = (e) => {
         let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
         value = value.substring(0, 11);
@@ -29,30 +20,58 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         e.target.value = formattedValue;
     };
-
-    // Adiciona o 'escutador' de evento a cada campo de telefone
     phoneInputs.forEach(input => {
         input.addEventListener('input', handlePhoneInput);
     });
 
     // --- Funcionalidade do Acordeão (FAQ) ---
     const faqQuestions = document.querySelectorAll('.faq-question');
-
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
-            // Encontra o .faq-item pai do elemento clicado
             const clickedItem = question.closest('.faq-item');
-
-            // Encontra todos os itens que já estão abertos (com a classe .active)
             document.querySelectorAll('.faq-item.active').forEach(openItem => {
-                // Se o item aberto não for o que acabamos de clicar, feche-o
                 if (openItem !== clickedItem) {
                     openItem.classList.remove('active');
                 }
             });
-
-            // Agora, abra ou feche o item que foi clicado
             clickedItem.classList.toggle('active');
         });
     });
+
+    // --- NOVO CÓDIGO: Funcionalidade da Página de Serviços ---
+    const serviceLinks = document.querySelectorAll('.service-link');
+    const serviceDetails = document.querySelectorAll('.service-detail');
+
+    // Verifica se os elementos da página de serviços existem antes de adicionar os eventos
+    // Isso evita erros em outras páginas que não têm esses elementos.
+    if (serviceLinks.length > 0 && serviceDetails.length > 0) {
+        
+        serviceLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Previne o comportamento padrão do link
+                event.preventDefault();
+
+                // Pega o valor do atributo 'data-service' do link clicado
+                const serviceId = this.dataset.service;
+
+                // Remove a classe 'active' de todos os links
+                serviceLinks.forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                // Adiciona a classe 'active' apenas no link que foi clicado
+                this.classList.add('active');
+                
+                // Esconde todos os painéis de detalhes
+                serviceDetails.forEach(detail => {
+                    detail.classList.remove('active');
+                });
+
+                // Mostra o painel de detalhe correto
+                const activeDetailPanel = document.getElementById(serviceId);
+                if (activeDetailPanel) {
+                    activeDetailPanel.classList.add('active');
+                }
+            });
+        });
+    }
 });
