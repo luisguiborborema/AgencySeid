@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header | Cabeçalho -->
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo"><img src="images/LogoSEID-champanhe.png" alt="Logo SEID"></a>
@@ -23,32 +24,94 @@
         </nav>
     </header>
 
+    <!-- Main | Principal -->
     <main>
-        <section class="secao-clara">
-            <h1>Soluções Estratégicas para o Mercado Imobiliário</h1>
-            <p>Entregamos posicionamento estratégico, conteúdo com estética premium e processos claros.</p>
+        <section class="hero">
+            <div class="container">
+                <h1>Soluções Estratégicas para o Mercado Imobiliário</h1>
+                <p class="section-description">Entregamos posicionamento estratégico, conteúdo com estética premium e processos claros para impulsionar sua marca.</p>
 
-            <div class="services-list" style="margin-top: 3rem;">
-                <div class="portfolio-item">
-                    <h3>Branding e Posicionamento Estratégico</h3>
-                    <p>Mergulhamos na sua identidade para construir uma marca forte e autêntica. Definimos seu público, sua voz e seu diferencial para que você seja reconhecido como autoridade.</p>
-                </div>
-                <div class="portfolio-item">
-                    <h3>Identidade Visual e Copywriting</h3>
-                    <p>Criamos uma estética refinada e textos persuasivos que traduzem seu valor. Do logo à paleta de cores, cada elemento é pensado para gerar desejo e confiança.</p>
-                </div>
-                <div class="portfolio-item">
-                    <h3>Gestão de Tráfego e Performance</h3>
-                    <p>Transformamos estratégia em resultado mensurável. Criamos campanhas de anúncios pagos com foco em conversão, atraindo o cliente certo para o seu imóvel.</p>
-                </div>
-                <div class="portfolio-item">
-                    <h3>Produção Audiovisual e Fotografia</h3>
-                    <p>Vídeos e fotos que impactam. Produzimos conteúdo visual de alto padrão que valoriza seus imóveis e conecta sua marca ao público de forma emocional e profissional.</p>
+                <div class="services-container">
+                    <nav class="service-nav">
+                        <a href="#" class="service-link active" data-service="branding">
+                            <img src="images/apple.png" alt="Ícone de Branding">
+                            <div class="service-link-info">
+                                <h4>Branding e Posicionamento</h4>
+                                <p>Construção de marcas fortes e autênticas.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="service-link" data-service="visual">
+                            <img src="images/nike.png" alt="Ícone de Identidade Visual">
+                            <div class="service-link-info">
+                                <h4>Identidade Visual e Copywriting</h4>
+                                <p>Estética refinada e textos que vendem.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="service-link" data-service="trafego">
+                            <img src="images/ray ban.png" alt="Ícone de Gráficos de Performance">
+                            <div class="service-link-info">
+                                <h4>Gestão de Tráfego e Performance</h4>
+                                <p>Anúncios focados em conversão e resultados.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="service-link" data-service="audiovisual">
+                            <img src="images/samsung.avif" alt="Ícone de Câmera">
+                            <div class="service-link-info">
+                                <h4>Produção Audiovisual</h4>
+                                <p>Vídeos e fotos de alto padrão que impactam.</p>
+                            </div>
+                        </a>
+                    </nav>
+                    <!-- Serviços Conteúdo -->
+                    <div class="service-content">
+                        <div id="branding" class="service-detail active">
+                            <!-- Branding -->
+                            <h3>Branding e Posicionamento Estratégico</h3>
+                            <p>Mergulhamos na sua identidade para construir uma marca forte e autêntica. Definimos seu público, sua voz e seu diferencial para que você seja reconhecido como autoridade no mercado. O objetivo é criar uma conexão duradoura com seus clientes, baseada em confiança e valor percebido.</p>
+                            <img src="images/" alt="Case de Branding" class="service-image">
+                            <div class="video-placeholder">
+                                <!-- Vídeo Branding -->
+                                <video controls width="100%">
+                                    <source src="images/video.mp4" type="video/mp4">
+                                    Seu navegador não suporta a tag de vídeo.
+                                </video>
+                            </div>
+                        </div>
+
+                        <!-- Identidade Visual -->
+                        <div id="visual" class="service-detail">
+                            <h3>Identidade Visual e Copywriting</h3>
+                            <p>Criamos uma estética refinada e textos persuasivos que traduzem seu valor. Do logo à paleta de cores, cada elemento é pensado para gerar desejo e confiança. Nosso copywriting foca em contar a história da sua marca e destacar os benefícios dos seus imóveis de forma clara e envolvente.</p>
+                            <img src="images/nike.png" alt="Case de Identidade Visual" class="service-image">
+                        </div>
+
+                        <!-- Gestão de Tráfego -->
+                        <div id="trafego" class="service-detail">
+                            <h3>Gestão de Tráfego e Performance</h3>
+                            <p>Transformamos estratégia em resultado mensurável. Criamos e otimizamos campanhas de anúncios pagos no Google, Instagram e Facebook com foco em conversão, atraindo o cliente certo para o seu imóvel e maximizando seu retorno sobre o investimento (ROI).</p>
+                            <img src="images/ray ban.png" alt="Case de Gestão de Tráfego" class="service-image">
+                        </div>
+
+                        <!-- Produção Audiovisual -->
+                        <div id="audiovisual" class="service-detail">
+                            <h3>Produção Audiovisual e Fotografia</h3>
+                            <p>Vídeos e fotos que impactam. Produzimos conteúdo visual de alto padrão que valoriza seus imóveis e conecta sua marca ao público de forma emocional e profissional. De tours virtuais a vídeos institucionais, criamos peças que geram encantamento e aceleram a decisão de compra.</p>
+                            <img src="images/samsung.avif" alt="Case de Produção Audiovisual" class="service-image">
+                            <div class="video-placeholder">
+                            <!-- Vídeo Produção Audiovisual -->
+                            <video controls width="100%">
+                                    <source src="images/video.mp4" type="video/mp4">
+                                    Seu navegador não suporta a tag de vídeo.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer | Rodapé -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-column footer-about">
@@ -81,7 +144,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-           <p>&copy; 2025 Seid &middot; Todos os direitos reservados &middot; Política de Privacidade &middot; Termos de Uso &middot; CNPJ: 59.000.000/0001-00</p>
+            <div class="footer-item">&copy; 2025 Seid</div>
+            <div class="footer-item">Todos os direitos reservados</div>
+            <div class="footer-item">Política de Privacidade</div>
+            <div class="footer-item">Termos de Uso</div>
+            <div class="footer-item">CNPJ: 00.000.000/0001-00</div>
         </div>
     </footer>
     <script src="js/script.js"></script>
