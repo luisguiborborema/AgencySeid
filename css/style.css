@@ -32,8 +32,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 body {
     font-family: var(--fonte-principal);
     background-color: var(--cor-fundo-principal); /* Fundo escuro como padrão */
@@ -41,18 +39,25 @@ body {
     line-height: 1.6;
 }
 
-
 /* 3. Header e Navegação */
-
-
 header {
     position: fixed; /* Fixa o header na tela */
     top: 0;          /* Alinha no topo */
     left: 0;         /* Alinha à esquerda */
     width: 100%;     /* Faz ocupar a largura toda */
     z-index: 1000;   /* Garante que fique sobre outros elementos */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+
 }
-/* NOVA REGRA PARA CENTRALIZAR O BOTÃO */
+header.scrolled .navbar {
+    /* Cor #173545 com 95% de opacidade */
+    background-color: rgba(23, 53, 69, 0.95); 
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    /* Adiciona um efeito de desfoque no fundo para um visual mais moderno (opcional) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+}
+/* CENTRALIZAR O BOTÃO */
 .button-wrapper {
     text-align: center;
 }
@@ -537,6 +542,26 @@ section h2 {
 .blog-post:hover .read-more::after {
     transform: translateX(5px); /* Move a seta para a direita no hover */
 }
+/* Estilização para as setas do carrossel de depoimentos */
+.testimonial-slider {
+    /* Define a cor das setas e da paginação (bolinhas) */
+    --swiper-navigation-color: var(--cor-cta); /* Usando sua cor dourada! */
+
+    /* Define o tamanho das setas */
+    --swiper-navigation-size: 20px; /* Você pode aumentar ou diminuir este valor */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    opacity: 1;
+}
+
 /* 7. Footer */
 /* Rodapé */
 .main-footer {
@@ -1034,8 +1059,18 @@ section h2 {
     font-weight: 700;  /* Opcional: deixa o texto um pouco mais grosso */
 }
 
+/* Em Estilo para as mensagens de erro da validação */
 
+.just-validate-error-label {
+    color: #ff6961 !important; /* Um tom de vermelho claro */
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    margin-top: 5px !important;
+}
 
+.just-validate-success-field {
+    border: 1px solid #00C851 !important; /* Borda verde para campos válidos */
+}
 
 /* FAQ */
 .faq {
@@ -1133,11 +1168,6 @@ section h2 {
     max-height: 300px; /* Valor alto para caber o conteúdo */
     padding: 20px;
 }
-
-
-
-
-
 
 /* 4. Estilo da Seção de Missão e Visão (NOVO GRID) */
 .mission-grid {

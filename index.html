@@ -6,8 +6,12 @@
     <title>SEID - Marketing Estratégico para o Mercado Imobiliário</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
+
+    <!-- Header | Cabeçalho -->
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo"><img src="images/LogoSEID-branco.png" alt="Logo SEID"></a>
@@ -22,51 +26,100 @@
             <a href="contato.html" class="cta-button-nav">Fale com um Especialista</a>
         </nav>
     </header>
+
+    <!-- Main -->
     <main>
+        <!-- Seção Hero -->
         <section class="hero">
             <div class="hero-content">
-                <h1>A presença que vende. Transformamos sua identidade em resultado.</h1>
-                <p>Impulsionamos marcas do mercado imobiliário com excelência, sofisticação e estratégias personalizadas. Construímos posicionamento com propósito para que você venda mais.</p>
-                <a href="contato.html" class="cta-button">Construa sua autoridade agora</a>
+                <h1 data-aos="fade-right">A presença que vende. Transformamos sua identidade em resultado.</h1>
+                <p data-aos="fade-left" data-aos-delay="125">Impulsionamos marcas do mercado imobiliário com excelência, sofisticação e estratégias personalizadas. Construímos posicionamento com propósito para que você venda mais.</p>
+                <a href="contato.html" class="cta-button" data-aos="flip-up" data-aos-delay="300">Construa sua autoridade agora</a>
             </div>
         </section>
+
+        <!-- Depoimentos -->
         <section class="testimonials">
-            <h2>Resultados Reais</h2>
-            <div class="testimonial-grid">
+            <h2 data-aos="fade-up">Resultados Reais</h2>
 
-                <div class="testimonial-card">
-                    <img src="images/mulher.jpg" alt="Foto de Glauria Moreira" class="testimonial-avatar">
-                    <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Gláuria Moreira</span>
-                        <span class="author-title">Corretora de Imóveis</span>
+            <div class="swiper testimonial-slider" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <!-- 1° Depoimento -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/mulher.jpg" alt="Foto de Glauria Moreira" class="testimonial-avatar">
+                            <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Gláuria Moreira</span>
+                                <span class="author-title">Corretora de Imóveis</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="testimonial-card">
-                    <img src="images/homem.png" alt="Foto de João Kepler" class="testimonial-avatar">
-                    <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">João Kepler</span>
-                        <span class="author-title">Corretor de Imóveis</span>
+                    <!-- 2° Depoimento -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/homem1.jpeg" alt="Foto de Glauria Moreira" class="testimonial-avatar">
+                            <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Gláuria Moreira</span>
+                                <span class="author-title">Corretora de Imóveis</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="testimonial-card">
-                    <img src="images/homem1.jpeg" alt="Foto de Guilherme Borborema" class="testimonial-avatar">
-                    <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">Guilherme Borborema</span>
-                        <span class="author-title">CEO - BMR Imobiliária</span>
+                    <!-- 3° Depoimento -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/mulher.jpg" alt="Foto de Glauria Moreira" class="testimonial-avatar">
+                            <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Gláuria Moreira</span>
+                                <span class="author-title">Corretora de Imóveis</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+
+                    <!-- 4° Depoimento -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/homem.png" alt="Foto de João Kepler" class="testimonial-avatar">
+                            <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
+                            <div class="testimonial-author">
+                                <span class="author-name">João Kepler</span>
+                                <span class="author-title">Corretor de Imóveis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5° Depoimento -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="images/homem1.jpeg" alt="Foto de Guilherme Borborema" class="testimonial-avatar">
+                            <p class="testimonial-quote">"O que existia era confiança e uma missão: construir do zero uma presença digital que representasse com fidelidade uma profissional séria e de alto nível. A SEID mergulhou na essência, organizou a comunicação e criou um posicionamento de valor. O conteúdo começou a atrair exatamente o público certo."</p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Guilherme Borborema</span>
+                                <span class="author-title">CEO - BMR Imobiliária</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <!-- Setas Swipe Carrossel -->
+                </div> <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div> 
         </section>
+
+        <!-- Projetos -->
         <section class="portfolio secao-clara">
-            <h2>Projetos de Destaque</h2>
+            <h2 data-aos="fade-up">Projetos de Destaque</h2>
             <div class="portfolio-grid">
 
-                <div class="portfolio-item">
+                <!-- 1° Projeto -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
                     <img src="images/alto.jpg" alt="Projeto de Branding para Corretora de Alto Padrão">
                     <div class="portfolio-info">
                         <span class="portfolio-category">Branding Pessoal</span>
@@ -75,7 +128,8 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <!-- 2° Projeto -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="150">
                     <img src="images/lancamento.jpg" alt="Projeto de Lançamento Imobiliário">
                     <div class="portfolio-info">
                         <span class="portfolio-category">Performance</span>
@@ -84,7 +138,8 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
+                <!-- 3° Projeto -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
                     <img src="images/imobiliaria.webp" alt="Projeto de Identidade Visual para Imobiliária">
                     <div class="portfolio-info">
                         <span class="portfolio-category">Identidade Visual</span>
@@ -94,31 +149,39 @@
                 </div>
 
             </div>
-            <div style="text-align: center; margin-top: 3rem;">
+            <div style="text-align: center; margin-top: 3rem;" data-aos="fade-up" data-aos-delay="250">
                 <a href="servicos.html" class="cta-button">Ver todos os serviços</a>
             </div>
         </section>
+
+        <!-- Seção Sobre Equipe -->
         <section class="about-summary">
             <div class="about-summary-container">
 
+                <!-- Texto a esquerda -->
                 <div class="about-summary-content">
-                    <h2>Mais que uma agência, aliados estratégicos.</h2>
-                    <p>A SEID nasceu da união de técnica, criatividade e resultado. Entendemos que o mercado está cheio de profissionais incríveis sendo mal percebidos. Nossa missão é mudar isso.</p>
+                    <h2 data-aos="fade-up">Mais que uma agência, aliados estratégicos.</h2>
+                    <p data-aos="fade-up" data-aos-delay="100">A SEID nasceu da união de técnica, criatividade e resultado. Entendemos que o mercado está cheio de profissionais incríveis sendo mal percebidos. Nossa missão é mudar isso.</p>
                     <div class="button-wrapper">
-                        <a href="sobre.html" class="cta-button-secondary">Conheça nossa história</a>
+                        <a href="sobre.html" class="cta-button-secondary" data-aos="fade-up" data-aos-delay="150">Conheça nossa história</a>
                     </div>
                 </div>
 
+                <!-- Imagem a direita -->
                 <div class="about-summary-image">
-                    <img src="images/equipe.jpeg" alt="Equipe da agência SEID em uma reunião estratégica">
+                    <img src="images/equipe.jpeg" alt="Equipe da agência SEID em uma reunião estratégica" data-aos="fade-up" data-aos-delay="100">
                 </div>
                 
             </div>
         </section>
+
+        <!-- Seção Blog -->
         <section class="blog secao-clara">
-            <h2>Últimos Artigos</h2>
+            <h2 data-aos="fade-up">Últimos Artigos</h2>
             <div class="blog-grid">
-                <div class="blog-post">
+
+                <!-- 1° Post Blog -->
+                <div class="blog-post" data-aos="fade-up" data-aos-delay="100">
                     <a href="blog.html#artigo1" class="blog-post-link">
                         <img src="images/01.jpeg" alt="Imagem do artigo sobre Marketing Digital Imobiliário">
                         <div class="blog-post-info">
@@ -129,7 +192,8 @@
                     </a>
                 </div>
 
-                <div class="blog-post">
+                <!-- 2° Post Blog -->
+                <div class="blog-post" data-aos="fade-up" data-aos-delay="150">
                     <a href="blog.html#artigo2" class="blog-post-link">
                         <img src="images/02.jpeg" alt="Imagem do artigo sobre Branding Pessoal">
                         <div class="blog-post-info">
@@ -140,7 +204,8 @@
                     </a>
                 </div>
 
-                <div class="blog-post">
+                <!-- 3° Post Blog -->
+                <div class="blog-post" data-aos="fade-up" data-aos-delay="200">
                     <a href="blog.html#artigo3" class="blog-post-link">
                         <img src="images/03.jpeg" alt="Imagem do artigo sobre Gestão de Tráfego">
                         <div class="blog-post-info">
@@ -154,6 +219,8 @@
             </div>
         </section>
     </main>
+
+    <!-- Footer | Rodapé -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-column footer-about">
@@ -193,6 +260,11 @@
             <div class="footer-item">CNPJ: 00.000.000/0001-00</div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 </html>

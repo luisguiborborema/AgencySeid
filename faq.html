@@ -6,8 +6,11 @@
     <title>Contato - Agência SEID</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
+    <!-- Header | Cabeçalho -->
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo"><img src="images/LogoSEID-champanhe.png" alt="Logo SEID"></a>
@@ -23,57 +26,74 @@
         </nav>
     </header>
 
+    <!-- Main -->
     <main> 
+
+        <!-- Seção FAQ-->
         <section class="faq" id="faq">
             <div class="container">
-                <h2 class="faq-tittle">Perguntas Frequentes</h2>
-                <p class="faq-p">Tire suas dúvidas sobre como a Seid pode impulsionar seu negócio.</p>
+                
+                <!-- Texto acima do FAQ -->
+                <h2 class="faq-tittle" data-aos="fade-up">Perguntas Frequentes</h2>
+                <p class="faq-p" data-aos="fade-up" data-aos-delay="100">Tire suas dúvidas sobre como a Seid pode impulsionar seu negócio.</p>
+                
+                <!-- Conteúdo FAQ -->
                 <div class="faq-container">
+                    <!-- 1° Pergunta FAQ -->
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <div class="faq-question" data-aos="fade-up">
                             <h3>O que é marketing digital?</h3>
                             <span class="faq-toggle-icon">»</span>
                         </div>
+                        <!-- 1° Resposta FAQ -->
                         <div class="faq-answer">
                             <p>Marketing digital é o conjunto de estratégias e ações de marketing que utilizam canais digitais (como internet, redes sociais, e-mail, aplicativos) para promover produtos, serviços ou marcas. Ele permite alcançar um público muito maior, segmentar campanhas e medir resultados de forma precisa.</p>
                         </div>
                     </div>
 
+                    <!-- 2° Pergunta FAQ -->
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <div class="faq-question" data-aos="fade-up" data-aos-delay="150">
                             <h3>Quais serviços a Seid oferece?</h3>
                             <span class="faq-toggle-icon">»</span>
                         </div>
+                        <!-- 2° Resposta FAQ -->
                         <div class="faq-answer">
                             <p>A Seid oferece soluções completas em marketing e vendas, incluindo: diagnóstico estratégico, planejamento de marca, gestão de redes sociais, copywriting, produção audiovisual (vídeos, fotografia), tráfego pago, SEO, automação de marketing e vendas, e análise de funil.</p>
                         </div>
                     </div>
 
+                    <!-- 3° Pergunta FAQ -->
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <div class="faq-question" data-aos="fade-up" data-aos-delay="200">
                             <h3>Como a Seid pode ajudar meu negócio a crescer?</h3>
                             <span class="faq-toggle-icon">»</span>
                         </div>
+                        <!-- 3° Resposta FAQ -->
                         <div class="faq-answer">
                             <p>Nós combinamos estratégia, criatividade e performance para atrair, engajar e converter clientes. Através de um planejamento personalizado, conteúdo relevante e campanhas de tráfego pago otimizadas, aumentamos sua visibilidade, geramos leads qualificados e impulsionamos suas vendas.</p>
                         </div>
                     </div>
 
+                    <!-- 4° Pergunta FAQ -->
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <div class="faq-question" data-aos="fade-up" data-aos-delay="250">
                             <h3>Qual o diferencial da Seid?</h3>
                             <span class="faq-toggle-icon">»</span>
                         </div>
+                        <!-- 4° Resposta FAQ -->
                         <div class="faq-answer">
                             <p>Nosso diferencial está na abordagem 360°, que integra todas as etapas do funil de vendas, desde a estratégia até a conversão. Somos obcecados por resultados e oferecemos soluções personalizadas, com uma equipe multidisciplinar que entende o seu negócio e transforma desafios em oportunidades de crescimento.</p>
                         </div>
                     </div>
 
-                    <div class="faq-item">
+                    <!-- 5° Pergunta FAQ -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="faq-question">
                             <h3>Como posso solicitar um diagnóstico gratuito?</h3>
                             <span class="faq-toggle-icon">»</span>
                         </div>
+                        <!-- 5° Resposta FAQ -->
                         <div class="faq-answer">
                             <p>É simples! Basta preencher o formulário de contato nesta página, ou clicar no botão "Fale com um Especialista" no cabeçalho. Nossa equipe entrará em contato para agendar uma conversa e entender suas necessidades.</p>
                         </div>
@@ -82,6 +102,8 @@
             </div>
         </section>
     </main>
+
+    <!-- Footer | Rodapé -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-column footer-about">
@@ -121,6 +143,11 @@
             <div class="footer-item">CNPJ: 00.000.000/0001-00</div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 </html>

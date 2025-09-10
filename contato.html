@@ -6,8 +6,11 @@
     <title>Contato - Agência SEID</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 </head>
 <body>
+
+    <!-- Header | Cabeçalho -->
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo"><img src="images/LogoSEID-champanhe.png" alt="Logo SEID"></a>
@@ -22,35 +25,54 @@
             <a href="contato.html" class="cta-button-nav">Fale com um Especialista</a>
         </nav>
     </header>
+
+    <!-- Main -->
     <main>
+
+        <!-- Seção Formulário -->
         <section class="section contact-form-section" id="contato">
             <div class="container">
-                <div class="contact-intro">
+                <!-- Texto acima do Formulário -->
+                <div class="contact-intro" data-aos="fade-down">
                     <h2 class="contact-tittle">Pronto para ter uma marca com alma e um negócio com resultado?</h2>
-                    <p class="contact-description">Quer destravar o crescimento do seu negócio? Preencha o formulário e agende um Diagnóstico Estratégico sem compromisso.</p>
+                    <p class="contact-description" data-aos="fade-down" data-aos-delay="100">Quer destravar o crescimento do seu negócio? Preencha o formulário e agende um Diagnóstico Estratégico sem compromisso.</p>
                 </div>
-                <div class="form-container">
-                    <form action="#" method="POST">
+
+                <!-- Conteúdo Formulário -->
+                <div class="form-container" data-aos="fade-up" data-aos-delay="150">
+                    <form action="#" method="POST" id="contact-form">
+
+                        <!-- Nome -->
                         <div class="form-group">
                             <label for="form-nome">Seu nome:</label>
                             <input type="text" id="form-nome" name="nome" placeholder="Seu nome completo" required maxlength="40">
                         </div>
+
+                        <!-- Empresa -->
                         <div class="form-group">
                             <label for="form-empresa">Qual o nome da sua Imobiliária?</label>
                             <input type="text" id="form-empresa" name="empresa" placeholder="Nome da sua Imobiliária" required maxlength="40">
                         </div>
+
+                        <!-- Email -->
                         <div class="form-group">
                             <label for="form-email">Seu melhor E-mail:</label>
                             <input type="email" id="form-email" name="email" placeholder="seid@email.com" required maxlength="50">
                         </div>
+
+                        <!-- Telefone -->
                         <div class="form-group">
                             <label for="form-telefone">Seu WhatsApp para contato:</label>
                             <input type="tel" id="form-telefone" name="telefone" class="phone-mask" placeholder="(XX)XXXXX-XXXX" required maxlength="15">
                         </div>
+
+                        <!-- Site / Instagram -->
                         <div class="form-group full-width">
                             <label for="form-redes">Link do seu site ou @ do Instagram:</label>
                             <input type="text" id="form-redes" name="redes" placeholder="seid.com ou @seid" required maxlength="40">
                         </div>
+
+                        <!-- Faturamento -->
                         <div class="form-group full-width">
                             <label for="form-faturamento">Qual sua média de faturamento mensal?</label>
                             <select id="form-faturamento" name="faturamento" required>
@@ -64,6 +86,8 @@
                                 <option value="1m-plus">Mais de R$1 milhão</option>
                             </select>
                         </div>
+
+                        <!-- CTA do Formulário -->
                         <div class="form-group full-width">
                             <button type="submit" class="cta-button">Quero meu Diagnóstico Estratégico!</button>
                         </div>
@@ -72,6 +96,8 @@
             </div>
         </section>
     </main>
+
+    <!-- Footer | Rodapé -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-column footer-about">
@@ -112,6 +138,12 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+
+
     <script src="js/script.js"></script>
+    
 </body>
 </html>
