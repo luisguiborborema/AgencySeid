@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
     // --- NOVO: FUNCIONALIDADE DE VALIDAÇÃO DO FORMULÁRIO DE CONTATO ---
     const contactForm = document.getElementById('contact-form');
 
@@ -165,4 +166,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 // contactForm.submit(); // Descomente esta linha se quiser o envio padrão do HTML
             });
     }
+
+    // Funcionalidade do Menu Hambúrguer ---
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburgerBtn && navLinks) {
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+        });
+    }
+
+    // Fecha o menu quando um link é clicado (útil para navegação interna)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+            }
+        });
+    });
 });

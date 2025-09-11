@@ -61,8 +61,6 @@ header.scrolled .navbar {
 .button-wrapper {
     text-align: center;
 }
-
-
 main {
     padding-top: 60px; /* Empurra todo o conteúdo principal para baixo */
 }
@@ -75,8 +73,6 @@ main {
     border-bottom: 1px solid rgba(184, 156, 116, 0.2);
     gap: 2rem;
 }
-
-
 .nav-links {
     display: flex;
     justify-content: center; /* Centraliza os links dentro da sua coluna */
@@ -84,28 +80,21 @@ main {
     gap: 2rem;
     /* Não precisa mais de flex-grow */
 }
-
-
 .navbar .cta-button-nav {
     justify-self: end;
 }
 .logo img {
     height: 40px;
 }
-
-
 .nav-links a {
     text-decoration: none;
     color: var(--cor-texto-claro);
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
-
 .nav-links a:hover {
     color: var(--cor-cta);
 }
-
 
 /* 4. Botões e Links */
 .cta-button, .cta-button-nav, .cta-button-secondary, .cta-button-final{
@@ -850,7 +839,7 @@ section h2 {
 /* 3. Melhorias visuais na seção de Pilares */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo */
+    grid-template-columns: repeat(3, 1fr); /* Grid responsivo */
     gap: 1.5rem;
 }
 .value-item {
@@ -1316,6 +1305,43 @@ section h2 {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* ====== ESTILOS DO MENU HAMBÚRGUER E MENU MOBILE ====== */
+
+/* 1. Estilo do Botão Hambúrguer */
+.hamburger-btn {
+    display: none; /* Escondido por padrão em telas grandes */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1010; /* Garante que fique acima do menu */
+    justify-self: end; /* Alinha o botão à direita no grid do navbar */
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: var(--cor-texto-claro); /* Cor das linhas */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 2. Animação do Botão para o formato "X" quando ativo */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
 /* Ajustes de Responsividade para o formulário em telas menores */
 @media (max-width: 900px) {
     .contact-container {
@@ -1346,9 +1372,6 @@ section h2 {
 }
 /* Responsividade (Sem alterações, já funcional) */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
     .cta-button-nav {
         display: none;
     }
@@ -1358,5 +1381,64 @@ section h2 {
     .contact-container {
         grid-template-columns: 1fr;
     }
+    
+    /* Estilo do menu mobile quando ele for ativado pelo JS */
+    .nav-links.active {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        
+        /* Sobreposição em tela cheia */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(23, 53, 69, 0.98); /* Fundo com leve transparência */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        
+        /* Animação de entrada */
+        animation: fadeInMenu 0.5s ease-in-out;
+    }
+    .hamburger-btn.active {
+    position: absolute;
+    top: 25px; /* Ajuste a distância do topo conforme necessário */
+    right: 25px; /* Ajuste a distância da direita conforme necessário */
+    }
+    /* Links dentro do menu mobile */
+    .nav-links.active a {
+        font-size: 1.5rem;
+    }
+    .values-grid {
+        /* Força o grid a ter 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .navbar {
+        /* Redefine o grid para duas colunas: logo e botão */
+        grid-template-columns: 1fr auto;
+        /* Alinha o botão do hambúrguer à direita */
+        justify-content: space-between;
+    }
+
+    /* Oculta os links e o botão CTA originais */
+    .nav-links, .cta-button-nav {
+        display: none;
+    }
+    
+    /* Mostra o botão hambúrguer */
+    .hamburger-btn {
+        display: flex;
+        justify-self: end;
+    }
+}
+/* Animação para o menu aparecer suavemente */
+@keyframes fadeInMenu {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
