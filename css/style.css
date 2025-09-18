@@ -979,7 +979,7 @@ section h2 {
 /* 8. Página de Contato */
 /* --- Estilos da Seção e Contêiner do Formulário --- */
 .contact-tittle{
-    color: var(--cor-texto-escuro);
+    color: var(--cor-cta);
     text-align: center;
 }
 
@@ -989,9 +989,7 @@ section h2 {
     text-align: center;
     padding: 30px 20px;
 }
-.contact-form-section{
-    color: #B89C74;
-}
+
 .contact-form-section .contact-intro .contact-description {
     color: var(--cor-texto-escuro-sec);
     max-width: 800px;
@@ -1036,7 +1034,7 @@ section h2 {
     border-radius: 5px;
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
-    background-color: #F3E9DC;
+    background-color: var(--cor-fundo-claro);
 }
 .form-container .cta-button {
     font-size: 1.2rem; /* 1rem = 16px */
@@ -1058,18 +1056,18 @@ section h2 {
 
 /* FAQ */
 .faq {
-    background-color: var(--cor-fundo-claro) !important; /* Cor do Fundo */
+    background-color: var(--cor-destaque-fundo) !important; /* Cor do Fundo */
 }
 .faq-tittle{
-    color: var(--cor-texto-escuro);
+    color: var(--cor-cta);
     text-align: center;
+    padding-top: 2rem;
 }
 .faq-p{
-    color: var(--cor-texto-escuro-sec);
+    color: var(--cor-texto-escuro);
     text-align: center;
     padding-bottom: 10px;
 }
-
 
 .faq-container {
     max-width: 800px;
@@ -1079,14 +1077,13 @@ section h2 {
 
 
 .faq-item {
-    background-color: #F3E9DC;
-    border: 1px solid #B89C74;
+    background-color: var(--cor-fundo-principal);
+    border: 1px solid var(--cor-cta);
     border-radius: 8px;
     margin-bottom: 15px;
     overflow: hidden; /* Essencial para a animação de max-height funcionar */
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-
 
 .faq-question {
     display: flex;
@@ -1094,22 +1091,35 @@ section h2 {
     align-items: center;
     padding: 20px;
     cursor: pointer;
-    background-color: #F3E9DC;
+    background-color: var(--cor-fundo-principal);
     transition: background-color 0.3s ease;
 }
 
-
 .faq-question:hover {
-    background-color: #F3E9DC;
+    background-color: var(--cor-fundo-principal);
 }
-
 
 .faq-question h3 {
     margin: 0;
     font-size: 1.15em;
-    color: #000000;
+    color: var(--cor-texto-claro);
 }
 
+/* Esconde a resposta por padrão */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    padding: 0 20px; /* Remove o padding quando fechado */
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+}
+
+/* Mostra a resposta quando o item está ativo */
+.faq-item.active .faq-answer {
+    max-height: 300px; /* Valor alto para caber o conteúdo */
+    padding: 20px;
+}
 
 .faq-toggle-icon {
     font-size: 1.5em; /* Ajustei um pouco o tamanho para o novo símbolo */
@@ -1126,9 +1136,6 @@ section h2 {
     opacity: 0.9;       /* Deixa o texto um pouco mais sutil */
 }
 
-
-
-
 /* --- REGRAS DE ESTADO ATIVO --- */
 /* Gira o ícone '»' para 90 graus */
 .faq-item.active .faq-toggle-icon {
@@ -1136,22 +1143,6 @@ section h2 {
 }
 
 
-/* Esconde a resposta por padrão */
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-    padding: 0 20px; /* Remove o padding quando fechado */
-    color: #555555;
-    line-height: 1.6;
-}
-
-
-/* Mostra a resposta quando o item está ativo */
-.faq-item.active .faq-answer {
-    max-height: 300px; /* Valor alto para caber o conteúdo */
-    padding: 20px;
-}
 
 /* 4. Estilo da Seção de Missão e Visão (NOVO GRID) */
 .mission-grid {
