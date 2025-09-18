@@ -148,13 +148,10 @@ main {
     color: var(--cor-fundo-principal);
 }
 
-
 /* 5. Estilos de Seções */
 section {
-    padding: 2.5rem 5%;
+    padding: 8px 5%;
 }
-
-
 section h2 {
     text-align: left;
     font-size: 2.5rem;
@@ -162,7 +159,6 @@ section h2 {
     margin-bottom: 2rem;
     color: var(--cor-texto-claro); /* Título claro por padrão */
 }
-
 
 /* CLASSE AUXILIAR para seções com fundo claro */
 .secao-clara {
@@ -173,12 +169,11 @@ section h2 {
     color: var(--cor-texto-escuro);
 }
 
-
 /* Hero Section */
 .hero {
     background: linear-gradient(var(--cor-fundo-principal)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     color: var(--cor-fundo-claro);
-    padding: 6rem 2rem 3rem;
+    padding: 4rem 2rem 2rem;
    
     /* Novas regras para centralização */
     display: flex;
@@ -1257,47 +1252,123 @@ section h2 {
 .service-content {
     background-color: var(--cor-destaque-fundo);
     border-radius: 10px;
-    padding: 2.5rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
 }
 
-.service-detail {
-    display: none; /* Esconde todos os cards por padrão */
-    animation: fadeIn 0.5s ease-in-out;
+.service-content h4{
+    color: var(--cor-texto-escuro);
+    font-size: 1rem;
+}
+/* --- Estilos para as Seções de Serviços Individuais --- */
+.service-detail-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%; /* Espaço interno para os cards e laterais */
 }
 
-.service-detail.active {
-    display: block; /* Mostra apenas o card ativo */
+.service-detail-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--cor-texto-escuro); /* Adapte a cor ao fundo claro */
 }
 
-.service-detail h3 {
+.service-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para texto e imagem */
+    align-items: center;
+    gap: 3rem; /* Espaço entre as colunas */
+}
+
+/* Reverte a ordem das colunas em alguns cards para um visual dinâmico */
+.service-detail-container.reverse {
+    grid-template-areas: "image text";
+}
+
+.service-detail-container.reverse .service-image {
+    grid-area: image;
+}
+
+.service-detail-container.reverse .service-text {
+    grid-area: text;
+}
+
+.service-text h3 {
     font-family: var(--fonte-secundaria);
     font-size: 2rem;
     color: var(--cor-texto-escuro);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.service-detail p {
-    font-size: 1.1rem;
-    line-height: 1.7;
+.service-text h4 {
+    font-family: var(--fonte-principal);
+    font-size: 1.25rem;
+    color: var(--cor-cta);
+    margin: 2rem 0 0.5rem 0;
+}
+
+.service-text ul {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding-left: 0;
+}
+
+.service-text li {
+    font-size: 1rem;
     color: var(--cor-texto-escuro-sec);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem; /* Espaço para o ícone */
 }
 
-.service-detail .service-image {
+.service-text li::before {
+    content: "✓"; /* Ícone de check */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--cor-cta);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.service-image img {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.service-detail .video-placeholder {
-    width: 40%;
-    height: auto;
-    background-color: #e9e9e9;
-    border-radius: 8px;
+.service-info-box {
+    background-color: var(--cor-destaque-fundo);
+    border-left: 5px solid var(--cor-cta);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 4px;
 }
-.service-detail .video-placeholder video {
-    border-radius: 8px;
+.service-info-box p, .service-info-box li {
+    margin: 0;
+    color: var(--cor-texto-escuro-sec);
+    font-size: 0.95rem;
+}
+.service-info-box h5 {
+    font-size: 1rem;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 1rem;
+}
+/* Estilos para os botões da hero section */
+.hero .cta-button, .hero .cta-button-secondary {
+    margin: 0.5rem; /* Adiciona espaçamento entre os botões */
+}
+/* Estilos para a seção de CTA final */
+.cta-final {
+    text-align: center;
+}
+.cta-final h2 {
+    color: var(--cor-texto-escuro);
+}
+.cta-final p {
+    color: var(--cor-texto-escuro-sec);
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
 }
 
 /* Animação simples de fade-in */
@@ -1368,6 +1439,27 @@ section h2 {
     }
     .service-link {
         flex-shrink: 0; /* Impede que os itens encolham */
+    }
+    .service-detail-container {
+        grid-template-columns: 1fr; /* Empilha as colunas em telas menores */
+    }
+    .service-detail-container.reverse {
+        grid-template-areas: none; /* Remove a ordem reversa */
+    }
+    .service-detail-container.reverse .service-image,
+    .service-detail-container.reverse .service-text {
+        grid-area: auto;
+    }
+    .service-detail-section {
+        padding: 3rem 20px; /* Reduz o padding em telas pequenas */
+    }
+    /* Alinha o texto do card de serviço ao centro em telas pequenas */
+    .service-detail-section .service-text {
+        text-align: center;
+    }
+    .service-text ul {
+        display: inline-block; /* Alinha o conteúdo da lista ao centro */
+        text-align: left;
     }
 }
 /* Responsividade (Sem alterações, já funcional) */
@@ -1442,3 +1534,13 @@ section h2 {
     to { opacity: 1; }
 }
 
+/* 1. Esconde todas as seções de serviço por padrão */
+main > section.secao-clara[id] {
+    display: none;
+}
+
+/* 2. Mostra a seção que tiver a classe 'active' */
+main > section.secao-clara[id].active {
+    display: block;
+    animation: fadeIn 0.6s ease; /* Usando a sua animação já existente! */
+}

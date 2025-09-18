@@ -4,7 +4,7 @@
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) { // Se o scroll for maior que 50px
+    if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
@@ -16,17 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicia a biblioteca de animações
     AOS.init({
-        duration: 800, // Duração da animação em milissegundos
-        once: true,    // Anima apenas uma vez
-        offset: 100,   // Começa a animação um pouco antes do elemento aparecer
+        duration: 800,
+        once: true,
+        offset: 100,
     });
 
     const testimonialSliderElement = document.querySelector('.testimonial-slider');
 
     if (testimonialSliderElement) {
-        // Se ele existir, aí sim iniciamos o Swiper
         const testimonialSlider = new Swiper('.testimonial-slider', {
-            // Opções
             slidesPerView: 1,
             spaceBetween: 30,
             loop: true,
@@ -52,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Funcionalidade da Máscara de Telefone ---
     const phoneInputs = document.querySelectorAll('.phone-mask');
     const handlePhoneInput = (e) => {
-        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+        let value = e.target.value.replace(/\D/g, '');
         value = value.substring(0, 11);
         let formattedValue = '';
         if (value.length > 0) {
@@ -84,50 +82,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Funcionalidade da Página de Serviços ---
-    const serviceLinks = document.querySelectorAll('.service-link');
-    const serviceDetails = document.querySelectorAll('.service-detail');
+    // --- FUNCIONALIDADE CORRIGIDA PARA A PÁGINA DE SERVIÇOS (VERSÃO 2) ---
+    const serviceButtons = document.querySelectorAll('.hero a.cta-button');
+    const serviceSections = document.querySelectorAll('main > section.secao-clara[id]');
 
-    // Verifica se os elementos da página de serviços existem antes de adicionar os eventos
-    // Isso evita erros em outras páginas que não têm esses elementos.
-    if (serviceLinks.length > 0 && serviceDetails.length > 0) {
+    // Verifica se estamos na página de serviços (se os elementos existem)
+    if (serviceButtons.length > 0 && serviceSections.length > 0) {
         
-        serviceLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                // Previne o comportamento padrão do link
-                event.preventDefault();
+        // Função para esconder todas as seções de serviço
+        function hideAllServices() {
+            serviceSections.forEach(section => {
+                section.classList.remove('active');
+            });
+        }
 
-                // Pega o valor do atributo 'data-service' do link clicado
-                const serviceId = this.dataset.service;
+        // Função para mostrar uma seção específica
+        function showService(targetId) {
+            // Remove o '#' do href para encontrar a seção pelo ID
+            const sectionId = targetId.substring(1); 
+            const targetSection = document.getElementById(sectionId);
 
-                // Remove a classe 'active' de todos os links
-                serviceLinks.forEach(navLink => {
-                    navLink.classList.remove('active');
-                });
-                // Adiciona a classe 'active' apenas no link que foi clicado
-                this.classList.add('active');
-                
-                // Esconde todos os painéis de detalhes
-                serviceDetails.forEach(detail => {
-                    detail.classList.remove('active');
-                });
+            if (targetSection) {
+                hideAllServices(); // Primeiro, esconde todas
+                targetSection.classList.add('active'); // Depois, mostra a seção alvo
+            }
+        }
 
-                // Mostra o painel de detalhe correto
-                const activeDetailPanel = document.getElementById(serviceId);
-                if (activeDetailPanel) {
-                    activeDetailPanel.classList.add('active');
-                }
+        // Adiciona um listener de clique a cada botão
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede que a página role para a âncora
+
+                const targetId = this.getAttribute('href'); 
+                showService(targetId);
             });
         });
-    }
 
-    // --- NOVO: FUNCIONALIDADE DE VALIDAÇÃO DO FORMULÁRIO DE CONTATO ---
+        // Por padrão, mostra a primeira seção de serviço ao carregar a página
+        const firstSectionId = serviceButtons[0].getAttribute('href');
+        if (firstSectionId) {
+            showService(firstSectionId);
+        }
+    }
+    
+    // --- VALIDAÇÃO DO FORMULÁRIO DE CONTATO ---
     const contactForm = document.getElementById('contact-form');
 
-    // Este 'if' garante que o código só vai rodar se o formulário existir na página atual
     if (contactForm) {
         const validator = new JustValidate(contactForm, {
-            validateBeforeSubmitting: true, // Valida os campos em tempo real
+            validateBeforeSubmitting: true,
         });
 
         validator
@@ -144,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ])
             .addField('#form-telefone', [
                 { rule: 'required', errorMessage: 'O WhatsApp é obrigatório' },
-                { rule: 'minLength', value: 14, errorMessage: 'Preencha o telefone completo' } // (XX)XXXXX-XXXX tem 15 caracteres
+                { rule: 'minLength', value: 14, errorMessage: 'Preencha o telefone completo' }
             ])
             .addField('#form-redes', [
                 { rule: 'required', errorMessage: 'Este campo é obrigatório' }
@@ -153,21 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 { rule: 'required', errorMessage: 'Por favor, selecione uma opção' }
             ])
             .onSuccess((event) => {
-                // Este código roda QUANDO o formulário é válido e o botão de enviar é clicado.
                 console.log('Formulário válido!', event);
                 
-                // Previne o envio padrão para podermos adicionar nossa lógica
                 event.preventDefault();
-
-                // Exemplo: Mostrar um alerta de sucesso
                 alert('Diagnóstico solicitado com sucesso! Entraremos em contato em breve.');
-                
-                // Aqui você adicionaria o código para enviar os dados para um servidor/email.
-                // contactForm.submit(); // Descomente esta linha se quiser o envio padrão do HTML
             });
     }
 
-    // Funcionalidade do Menu Hambúrguer ---
+    // --- Funcionalidade do Menu Hambúrguer ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const navLinks = document.querySelector('.nav-links');
 
@@ -178,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fecha o menu quando um link é clicado (útil para navegação interna)
+    // Fecha o menu quando um link é clicado
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
